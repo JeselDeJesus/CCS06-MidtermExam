@@ -12,57 +12,61 @@
 </head>
 <body>
 <div class="container-sm">
-	<h1>Player Attempts Average Score</h1>
+	<h1>Students Average Score</h1>
 
 	<table class="table table-striped tble-hover">
-		<thead>Student
 		<tr>
 			<th scope="col">Student</th>
-			<th scope="col">Attempt Score 1 </th>
-			<th scope="col">Attempt Score 2 </th>
+			<th scope="col">Midterm Grade </th>
+			<th scope="col">Finals Grade </th>
 			<th scope="col">Average</th>
+			<th scope="col">Remarks</th>
 		</tr>
 	    </thead>
 	    <tbody>
 	    <tr>
 	    	<td>{{ $student_1 }}</td>
-	    	<td>{{ $s1_attempt 1 }}</td>
-	    	<td>{{ $s1_attempt 2 }}</td>
+	    	<td>{{ $s1_Midterm }}</td>
+	    	<td>{{ $s1_Finals }}</td>
 	    	<td>{{ $s1_average }}</td>
+	    	<td>{{ $s1_remarks }}</td>
 	    </tr>
 
 	    <tr>
 	    	<td>{{ $student_2 }}</td>
-	    	<td>{{ $s2_attempt 1 }}</td>
-	    	<td>{{ $s2_attempt 2 }}</td>
+	    	<td>{{ $s2_Midterm }}</td>
+	    	<td>{{ $s2_Finals }}</td>
 	    	<td>{{ $s2_average }}</td>
+	    	<td>{{ $s2_remarks }}</td>
 	    </tr>
 
 	    <tr>
 	    	<td>{{ $student_3 }}</td>
-	    	<td>{{ $s3_attempt 1 }}</td>
-	    	<td>{{ $s3_attempt 2 }}</td>
+	    	<td>{{ $s3_Midterm }}</td>
+	    	<td>{{ $s3_Finals }}</td>
 	    	<td>{{ $s3_average }}</td>
+	    	<td>{{ $s3_remarks }}</td>
 	    </tr>
 	    
 	    <tr>
 	    	<td>{{ $student_4 }}</td>
-	    	<td>{{ $s4_attempt 1 }}</td>
-	    	<td>{{ $s4_attempt 2 }}</td>
+	    	<td>{{ $s4_Midterm }}</td>
+	    	<td>{{ $s4_Finals }}</td>
 	    	<td>{{ $s4_average }}</td>
+	    	<td>{{ $s4_remarks }}</td>
 	    </tr>
 	    
 	    <tr>
 	    	<td>{{ $student_5 }}</td>
-	    	<td>{{ $s5_attempt 1 }}</td>
-	    	<td>{{ $s5_attempt 2 }}</td>
+	    	<td>{{ $s5_Midterm }}</td>
+	    	<td>{{ $s5_Finals }}</td>
 	    	<td>{{ $s5_average }}</td>
+	    	<td>{{ $s5_remarks }}</td>
 	    </tr>
 	    </tbody>
 		</table>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
 	    

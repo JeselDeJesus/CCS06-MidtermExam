@@ -22,7 +22,7 @@ class StudentsController extends Controller
         return view('attempts', [
             'student_1' => $student_1,
             'student_2' => $student_2,
-            'student_3' => $student_3
+            'student_3' => $student_3,
             'student_4' => $student_4,
             'student_5' => $student_5,
         ]);
@@ -30,9 +30,23 @@ class StudentsController extends Controller
 
     protected function computeAverageScore($score1, $score2)
     {
-        $average = ($score1 + $score2 + $score3) / 3;
+        $average = ($score1 + $score2) / 2;
         return round($average, 2);
     }
+
+    protected function getRemarks($grade_remarks)
+    {
+        if($grade_remarks >= 75)
+        {
+            $remarks = "PASSED";
+        }
+        else 
+        {
+            $remarks = "FAILED"; 
+        }
+        return $remarks;
+    }
+
 
     public function computePower(Request $request)
     {
@@ -42,31 +56,50 @@ class StudentsController extends Controller
         $student_4 = $request->student_4;
         $student_5 = $request->student_5;
 
-        $p1_average = $this->computeAverageScore($request->p1_attempt1, $request->p1_attempt2, $request->p1_attempt3);
-        $p2_average = $this->computeAverageScore($request->p2_attempt1, $request->p2_attempt2, $request->p2_attempt3);
-        $p3_average = $this->computeAverageScore($request->p3_attempt1, $request->p3_attempt2, $request->p3_attempt3);
-        $p3_average = $this->computeAverageScore($request->p4_attempt1, $request->p4_attempt2, $request->p4_attempt3);
-        $p3_average = $this->computeAverageScore($request->p5_attempt1, $request->p5_attempt2, $request->p5_attempt3);
+        $s1_average = $this->computeAverageScore($request->s1_Midterm, $request->s1_Finals);
+        $s2_average = $this->computeAverageScore($request->s2_Midterm, $request->s2_Finals);
+        $s3_average = $this->computeAverageScore($request->s3_Midterm, $request->s3_Finals);
+        $s4_average = $this->computeAverageScore($request->s4_Midterm, $request->s4_Finals);
+        $s5_average = $this->computeAverageScore($request->s5_Midterm, $request->s5_Finals);
+
+        $s1_remarks = $this->getRemarks($s1_average);
+        $s2_remarks = $this->getRemarks($s2_average);
+        $s3_remarks = $this->getRemarks($s3_average);
+        $s4_remarks = $this->getRemarks($s4_average);
+        $s5_remarks = $this->getRemarks($s5_average);
 
         return view('scores', [
             'student_1' => $student_1,
             'student_2' => $student_2,
             'student_3' => $student_3,
+            'student_4' => $student_4,
+            'student_5' => $student_5,
             // student 1 attempts
-            'p1_attempt1' => $request->p1_attempt1,
-            'p1_attempt2' => $request->p1_attempt2,
-            'p1_attempt3' => $request->p1_attempt3,
-            'p1_average' => $p1_average,
+            's1_Midterm' => $request->s1_Midterm,
+            's1_Finals' => $request->s1_Finals,
+            's1_average' => $s1_average,
+            's1_remarks' => $s1_remarks,
             // student 2 attempts
-            'p2_attempt1' => $request->p2_attempt1,
-            'p2_attempt2' => $request->p2_attempt2,
-            'p2_attempt3' => $request->p2_attempt3,
-            'p2_average' => $p2_average,
+            's2_Midterm' => $request->s2_Midterm,
+            's2_Finals' => $request->s2_Finals,
+            's2_average' => $s2_average,
+            's2_remarks' => $s2_remarks,
             // student 3 attempts
-            'p3_attempt1' => $request->p3_attempt1,
-            'p3_attempt2' => $request->p3_attempt2,
-            'p3_attempt3' => $request->p3_attempt3,
-            'p3_average' => $p3_average
+            's3_Midterm' => $request->s3_Midterm,
+            's3_Finals' => $request->s3_Finals,
+            's3_average' => $s3_average,
+            's3_remarks' => $s3_remarks,
+            // student 4 attempts
+            's4_Midterm' => $request->s4_Midterm,
+            's4_Finals' => $request->s4_Finals,
+            's4_average' => $s4_average,
+            's4_remarks' => $s4_remarks,
+            // student 5 attempts
+            's5_Midterm' => $request->s5_Midterm,
+            's5_Finals' => $request->s5_Finals,
+            's5_average' => $s5_average,
+            's5_remarks' => $s5_remarks,
+
         ]);
     }
 }

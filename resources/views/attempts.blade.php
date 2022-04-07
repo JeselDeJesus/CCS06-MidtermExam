@@ -14,64 +14,66 @@
 <div class="container-sm">
 	<h1>StudentsAttempts</h1>
 
-	<form action="/commute-power" method="POST">
+	<form action="/compute-power" method="POST">
 	<input type="hidden" name="student_1" value="{{ $student_1 }}">
-	<input type="hidden" name="student_1" value="{{ $student_2 }}">
-	<input type="hidden" name="student_1" value="{{ $student_3 }}">
+	<input type="hidden" name="student_2" value="{{ $student_2 }}">
+	<input type="hidden" name="student_3" value="{{ $student_3 }}">
+	<input type="hidden" name="student_4" value="{{ $student_4 }}">
+	<input type="hidden" name="student_5" value="{{ $student_5 }}">
 	@csrf
 <div class="row">
 	<label>Student: <Strong>{{ $student_1 }}</Strong></label>
 	<div class="col col-md-4">
-		<label> Attempt Score 1</label>
-		<input type="number" name="s1_attempt1" class="form-control">
+		<label> Midterm </label>
+		<input type="number" name="s1_Midterm" class="form-control">
 	</div>
 		<div class="col col-md-4">
-		<label> Attempt Score 2</label>
-		<input type="number" name="s1_attempt2" class="form-control">
+		<label> Finals </label>
+		<input type="number" name="s1_Finals" class="form-control">
 	</div>
 
 <div class="row">
 	<label>Student: <Strong>{{ $student_2 }}</Strong></label>
 	<div class="col col-md-4">
-		<label> Attempt Score 1</label>
-		<input type="number" name="s2_attempt1" class="form-control">
+		<label> Midterm </label>
+		<input type="number" name="s2_Midterm" class="form-control">
 	</div>
 		<div class="col col-md-4">
-		<label> Attempt Score 2</label>
-		<input type="number" name="s2_attempt2" class="form-control">
+		<label> Finals </label>
+		<input type="number" name="s2_Finals" class="form-control">
 	</div>
 
 	<div class="row">
 	<label>Student: <Strong>{{ $student_3 }}</Strong></label>
 	<div class="col col-md-4">
-		<label> Attempt Score 1</label>
-		<input type="number" name="s3_attempt1" class="form-control">
+		<label> Midterm </label>
+		<input type="number" name="s3_Midterm" class="form-control">
 	</div>
 		<div class="col col-md-4">
-		<label> Attempt Score 2</label>
-		<input type="number" name="s3_attempt2" class="form-control">
+		<label> Finals </label>
+		<input type="number" name="s3_Finals" class="form-control">
 	</div>
 
 	<div class="row">
 	<label>Student: <Strong>{{ $student_4 }}</Strong></label>
 	<div class="col col-md-4">
-		<label> Attempt Score 1</label>
-		<input type="number" name="s4_attempt1" class="form-control">
+		<label> Midterm </label>
+		<input type="number" name="s4_Midterm" class="form-control">
 	</div>
 		<div class="col col-md-4">
-		<label> Attempt Score 2</label>
-		<input type="number" name="s4_attempt2" class="form-control">
+		<label> Finals </label>
+		<input type="number" name="s4_Finals" class="form-control">
 	</div>
 
 	<div class="row">
 	<label>Student: <Strong>{{ $student_5 }}</Strong></label>
 	<div class="col col-md-4">
-		<label> Attempt Score 1</label>
-		<input type="number" name="s5_attempt1" class="form-control">
+		<label> Midterm </label>
+		<input type="number" name="s5_Midterm" class="form-control">
 	</div>
 		<div class="col col-md-4">
-		<label> Attempt Score 2</label>
-		<input type="number" name="s5_attempt2" class="form-control">
+		<label> Finals </label>
+		<input type="number" name="s5_Finals" class="form-control">
 	</div>
 </div>
 <hr />
@@ -83,6 +85,6 @@
 </form>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</div>
 </body>
 </html>
